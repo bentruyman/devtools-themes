@@ -1,0 +1,15 @@
+{
+  "name": "devtools-themes",
+  "version": "0.0.0",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bentruyman/devtools-themes.git"
+  },
+  "author": "Ben Truyman <bentruyman@gmail.com>",
+  "license": "Unlicense",
+  "devDependencies": {
+    "grunt": "0.3.x",
+    "grunt-contrib-less": "0.3.x" 
+  }
+}
