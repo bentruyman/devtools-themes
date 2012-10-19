@@ -4,7 +4,11 @@ module.exports = function (grunt) {
   
   // Project configuration.
   grunt.initConfig({
-    clean: ['Custom.css']
+    clean: ['Custom.css'],
+    watch: {
+      files: ['Custom.less', 'themes/**/*.less'],
+      tasks: 'build:tomorrow-night-dark'
+    }
   });
   
   // Default task.
