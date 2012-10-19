@@ -1,27 +1,19 @@
-/*global module:false*/
-module.exports = function(grunt) {
+module.exports = function (grunt) {
   
   'use strict';
   
   // Project configuration.
   grunt.initConfig({
-    less: {
-      devtools: {
-        files: {
-          'Custom.css': 'Custom.less'
-        }
-      }
-    },
-    watch: {
-      files: ['Custom.less', 'themes/**/*.less'],
-      tasks: 'less'
-    }
+    clean: ['Custom.css']
   });
   
   // Default task.
-  grunt.registerTask('default', 'less');
+  grunt.registerTask('default', 'build:tomorrow-night-dark');
   
-  // Load loadNpmTask tasks.
-  grunt.loadNpmTasks('grunt-contrib-less');
+  // Load NPM tasks.
+  grunt.loadNpmTasks('grunt-contrib-clean');
+  
+  // Load local tasks.
+  grunt.loadTasks('tasks');
   
 };
