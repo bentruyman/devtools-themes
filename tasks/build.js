@@ -24,11 +24,11 @@ module.exports = function (grunt) {
   });
   
   function createThemeTask (theme) {
-    var filename = path.join(THEMES_DIR, theme + '.less'),
-        foundation = grunt.file.read('Custom.less');
+    var filename = path.join(THEMES_DIR, theme + '.less');
     
     return function () {
       var contents = grunt.file.read(filename),
+          foundation = grunt.file.read('Custom.less'),
           done = this.async();
       
       // join the contents of the theme stylesheet with the foundation
