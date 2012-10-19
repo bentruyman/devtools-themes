@@ -14,9 +14,6 @@ var less = require('less'),
 var THEMES_DIR = 'themes';
 
 module.exports = function (grunt) {
-  // load the contents of the foundation stylesheet
-  var foundation = grunt.file.read('Custom.less');
-  
   // generate a list of themes based on sources files in the "themes" directory
   var themes = grunt.file.expandFiles(THEMES_DIR + '/*.less').map(function (filename) {
     return path.basename(filename, '.less');
@@ -27,7 +24,8 @@ module.exports = function (grunt) {
   });
   
   function createThemeTask (theme) {
-    var filename = path.join(THEMES_DIR, theme + '.less');
+    var filename = path.join(THEMES_DIR, theme + '.less'),
+        foundation = grunt.file.read('Custom.less');
     
     return function () {
       var contents = grunt.file.read(filename),
