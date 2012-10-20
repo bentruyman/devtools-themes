@@ -1,5 +1,7 @@
 # Chrome Developer Tools Themes
 
+*(still buggy)*
+
 A collection of themes for Chrome's Developer Tools.
 
 The theme files are written in [LESS](http://lesscss.org/) and make use of
@@ -23,16 +25,17 @@ To download these dependencies, run the following from the root of this project:
 
 ## Installation
 
-Still working on this...
-
-Run `grunt` to create your CSS file.
+Grunt automatically creates a build task for each of the theme stylesheets in
+the `themes` directory. To build the `monokai-dark` theme, simple run:
+`grunt build:monokai-dark`. A compiled `Custom.css` file will be created at the
+root of this project.
 
 Depending on your platform, you'll need to install the `Custom.css` file into
 your Chrome's User Stylesheet's directory:
 
 * **Mac:** ~/Library/Application Support/Google/Chrome/Default/User StyleSheets/Custom.css
-* **PC:** C:\Users\YourUsername\AppData\Local\Google\Chrome\User Data\Default\User StyleSheets\Custom.css ~Thanks to @vsc
-* **Ubuntu (Chromium):** ~/.config/chromium/Default/User\ StyleSheets/Custom.css ~Thanks to @carlos
+* **PC:** C:\Users\YourUsername\AppData\Local\Google\Chrome\User Data\Default\User StyleSheets\Custom.css
+* **Ubuntu (Chromium):** ~/.config/chromium/Default/User\ StyleSheets/Custom.css
 
 ## License
 
