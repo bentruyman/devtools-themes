@@ -42,6 +42,11 @@ your Chrome's User Stylesheet's directory:
 Feel free to fork and add your own themes! Just follow existing coding style and
 conventions.
 
+## Examples 
+
+![Monokai Dark](https://raw.github.com/bentruyman/devtools-themes/master/examples/monokai-dark.png)
+![Tomorrow Night](https://raw.github.com/bentruyman/devtools-themes/master/examples/tomorrow-night.png)
+
 ## License
 
 This is free and unencumbered software released into the public domain.
