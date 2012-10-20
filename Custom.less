@@ -147,12 +147,12 @@
     
     .console-group-messages .section .header::before,
     .properties-tree li.parent::before {
-      content: url(chrome-devtools://devtools/Images/treeRightTriangleWhite.png) !important;
+      content: url(@tree-arrow-right) !important;
     }
     
     .console-group-messages .section.expanded .header::before,
     .properties-tree li.parent.expanded::before {
-      content: url(chrome-devtools://devtools/Images/treeDownTriangleWhite.png) !important;
+      content: url(@tree-arrow-down) !important;
     }
     
     .console-message-text {
@@ -462,7 +462,7 @@
     .event-bars .event-bar .header::before,
     .outline-disclosure li.parent::before,
     .styles-section.matched-styles .properties li.parent .expand-element {
-      content: url(chrome-devtools://devtools/Images/treeRightTriangleWhite.png) !important;
+      content: url(@tree-arrow-right) !important;
     }
     
     .styles-section .properties li.parent::before,
@@ -481,7 +481,7 @@
     .event-bars .event-bar.expanded .header::before,
     .outline-disclosure li.parent.expanded::before,
     .styles-section.matched-styles .properties li.parent.expanded .expand-element {
-      content: url(chrome-devtools://devtools/Images/treeDownTriangleWhite.png) !important;
+      content: url(@tree-arrow-down) !important;
     }
     
     .child-editing {
@@ -498,11 +498,11 @@
     }
     
     .section .header {
-      color: #CCC !important;
+      color: @foreground !important;
     }
     
     .properties .value {
-      color: @javascript-property-value !important;
+      color: @foreground !important;
     }
     
     .metrics {
@@ -545,7 +545,7 @@
     }
     
     .placard:nth-of-type(2n) {
-      background: #333 !important;
+      background: @background !important;
     }
     
     .placard.selected {
@@ -554,7 +554,7 @@
     }
     
     .placard .title {
-      color: #CCC !important;
+      color: @foreground !important;
     }
     
     .placard .subtitle {
