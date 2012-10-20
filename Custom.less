@@ -17,7 +17,7 @@
 }
 
 .text-shadow() {
-  text-shadow: 0 1px 0 #000 !important;
+  text-shadow: 0 1px 0 @background !important;
 }
 
 .toolbar-background() {
@@ -33,7 +33,7 @@
   background-color: @background;
   
   ::selection {
-    background: #aaa;
+    background: @selection;
     opacity: 1;
   }
   
@@ -50,11 +50,11 @@
   }
   
   &.compact #toolbar .toolbar-label {
-    color: #aaa !important;
+    color: @foreground !important;
   }
   
   &.compact #toolbar .toggled-on .toolbar-label {
-    color: #eee !important;
+    color: lighten(@foreground, 20%) !important;
   }
   
   &.compact #toolbar .toolbar-item.toggleable.toggled-on {
@@ -80,7 +80,7 @@
   }
   
   &.compact #search-results-matches {
-    color: #eee !important;
+    color: lighten(@foreground, 20%) !important;
     text-shadow: none !important;
   }
 
@@ -98,19 +98,19 @@
     
     #console-messages {
       font-family: 'DroidSansMono', Menlo, monospace !important;
-      background: @background
+      background: @background;
     }
     
     #console-messages a {
-      color: #666 !important;
+      color: @foreground !important;
     }
     
     #console-messages a:hover {
-      color: #999 !important;
+      color: lighten(@foreground, 20%) !important;
     }
     
     .console-message {
-      color: #F1F1F1 !important;
+      color: @foreground !important;
     }
     
     .console-message, .console-user-command {
@@ -118,7 +118,7 @@
     }
     
     .console-user-command > .console-message-text {
-      color: #C4C7C6 !important;
+      color: @foreground !important;
     }
     
     .console-formatted-number {
@@ -130,7 +130,7 @@
     }
     
     .console-formatted-object {
-      color: #7C7C7C !important;
+      color: @javascript-comment !important;
     }
     
     .console-formatted-function {
@@ -142,7 +142,7 @@
     }
     
     .console-group-messages .section .header .title {
-      color: #F1F1F1 !important;
+      color: @foreground !important;
     }
     
     .console-group-messages .section .header::before,
@@ -160,7 +160,7 @@
     }
     
     .console-error-level .console-message-text, .console-error-level .section .header .title {
-      color: #f66 !important;
+      color: @error !important;
       -webkit-animation: webkit-inspector-error 4s ease-in-out infinite !important;
     }
     
@@ -173,7 +173,7 @@
     // *********************************************/
     
     #console-prompt {
-      color: #F1F1F1 !important;
+      color: @foreground !important;
     }
     
     #console-prompt::before {
@@ -194,7 +194,7 @@
     .pane,
     .breakpoint-list li,
     .pane > .body .info {
-      color: #CCC !important;
+      color: @foreground !important;
     }
     
     .script-view,
@@ -207,7 +207,7 @@
     }
     
     .highlight {
-      color: #F1F1F1;
+      color: @foreground;
     }
     
     li.hovered:not(.selected) .selection {
@@ -332,7 +332,7 @@
     .inspector-footer {
       .toolbar-search {
         .toolbar-search-control {
-          background: lighten(#fff, 50%) !important;
+          background: lighten(@foreground, 50%) !important;
         }
       }
     }
@@ -422,7 +422,7 @@
     
     .editing {
       color: @foreground !important;
-      background-color: #000 !important;
+      background-color: @background !important;
     }
     
     .styles-section.read-only {
@@ -431,15 +431,15 @@
     
     .styles-section,
     .subtitle {
-      color: #7C7C7C !important;
+      color: @html-comment !important;
     }
     
     .styles-sidebar-separator,
     .pane > .title {
       .toolbar-background();
-      border-top-color: #666 !important;
-      border-bottom-color: #333 !important;
-      color: #bbb !important;
+      border-top-color: @toolbar-top !important;
+      border-bottom-color: @toolbar-bottom !important;
+      color: @foreground !important;
       .text-shadow();
       text-overflow: ellipsis !important;
     }
@@ -450,7 +450,7 @@
     }
     
     .split-view-sidebar-right {
-      background: #222 !important;
+      background: lighten(@background, 5%) !important;
     }
     
     .section > .header::before,
@@ -502,15 +502,15 @@
     }
     
     .metrics {
-      color: #333 !important;
+      color: @background !important;
     }
     
     .metrics .border {
-      border-color: #FFF !important;
+      border-color: @foreground !important;
     }
     
     .event-bars .event-bar .header .title {
-      color: #969796 !important;
+      color: @selection !important;
       text-shadow: none !important;
     }
     
@@ -525,7 +525,7 @@
     .console-formatted-object,
     .console-formatted-node,
     .console-formatted-array {
-      color: #7C7C7C !important;
+      color: @javascript-comment !important;
     }
     
     .console-formatted-function {
@@ -567,7 +567,7 @@
     
     .popover .arrow {
       background-image: none !important;
-      border-color: transparent transparent #000 transparent !important;
+      border-color: transparent transparent @background transparent !important;
       border-style: solid;
       border-width: 10px;
       width: 0 !important;
@@ -578,17 +578,17 @@
     
     .popover.bottom-left-arrow .arrow,
     .popover.bottom-right-arrow .arrow {
-      border-color: #000 transparent transparent transparent !important;
+      border-color: @background transparent transparent transparent !important;
     }
 
     .popover.left-top-arrow .arrow,
     .popover.left-bottom-arrow .arrow {
-      border-color: transparent #000 transparent transparent !important;
+      border-color: transparent @background transparent transparent !important;
     }
 
     .popover.right-top-arrow .arrow,
     .popover.right-bottom-arrow .arrow {
-      border-color: transparent transparent #000 transparent !important;
+      border-color: transparent transparent @background transparent !important;
     }
     
     .popover .source-frame-popover-title {
