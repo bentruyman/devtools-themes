@@ -37,6 +37,11 @@ your Chrome's User Stylesheet's directory:
 * **PC:** C:\Users\YourUsername\AppData\Local\Google\Chrome\User Data\Default\User StyleSheets\Custom.css
 * **Ubuntu (Chromium):** ~/.config/chromium/Default/User\ StyleSheets/Custom.css
 
+## Contributing
+
+Feel free to fork and add your own themes! Just follow existing coding style and
+conventions.
+
 ## License
 
 This is free and unencumbered software released into the public domain.
