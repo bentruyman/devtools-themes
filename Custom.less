@@ -113,6 +113,10 @@
       color: @foreground !important;
     }
     
+    .console-message:hover {
+      background-color: @selection !important;
+    }
+    
     .console-message, .console-user-command {
       border-bottom: 1px solid #444 !important;
     }
@@ -584,12 +588,12 @@
     .popover.bottom-right-arrow .arrow {
       border-color: @background transparent transparent transparent !important;
     }
-
+    
     .popover.left-top-arrow .arrow,
     .popover.left-bottom-arrow .arrow {
       border-color: transparent @background transparent transparent !important;
     }
-
+    
     .popover.right-top-arrow .arrow,
     .popover.right-bottom-arrow .arrow {
       border-color: transparent transparent @background transparent !important;
@@ -616,5 +620,9 @@
     .webkit-execution-line.webkit-line-content {
       background-color: @selection !important;
       outline: 1px solid darken(@selection, 15%) !important;
+    }
+    
+    ol.watch-expressions > li.hovered {
+      background-color: @foreground !important;
     }
 }
