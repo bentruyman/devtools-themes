@@ -33,7 +33,7 @@
   background-color: @background;
   
   ::selection {
-    background: @selection;
+    background: fadeout(@foreground, 70%) !important;
     opacity: 1;
   }
   
@@ -220,6 +220,31 @@
     
     #elements-content .selected {
       background-color: @selection !important;
+    }
+    
+    .network-log-grid.data-grid {
+      color: @foreground !important;
+      background: @background !important;
+      
+      tr.filler {
+        background: @background !important;
+      }
+      
+      td {
+        &.method-column,
+        &.status-column,
+        &.type-column,
+        &.initiator-column,
+        &.size-column,
+        &.time-column {
+          background-color: @current-line !important;
+          border-right: 1px solid @selection !important;
+        }
+        
+        &.name-column {
+          border-right: 1px solid @selection !important;
+        }
+      }
     }
     
     // *********************************************/
