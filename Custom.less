@@ -577,21 +577,23 @@
       background: @selection !important;
     }
     
-    .placard:nth-of-type(2n) {
-      background: @background !important;
-    }
-    
-    .placard.selected {
-      background-image: -webkit-linear-gradient(@top-bar-color, darken(@top-bar-color, 30%)) !important;
-      border-top-color: darken(@top-bar-color, 30%) !important;
-    }
-    
-    .placard .title {
-      color: @foreground !important;
-    }
-    
-    .placard .subtitle {
-      color: rgba(255, 255, 255, 0.7) !important;
+    .placard {
+      &:nth-of-type(2n) {
+        background: @background !important;
+      }
+      
+      &.selected {
+        background-image: -webkit-linear-gradient(@top-bar-color, darken(@top-bar-color, 30%)) !important;
+        border-top-color: darken(@top-bar-color, 30%) !important;
+      }
+      
+      .title {
+        color: @foreground !important;
+      }
+      
+      .subtitle {
+        color: rgba(255, 255, 255, 0.7) !important;
+      }
     }
     
     .popover {
@@ -600,46 +602,48 @@
       border-radius: 10px !important;
       -webkit-border-image: none !important;
       margin-left: 10px !important;
+      
+      &.bottom-left-arrow .arrow,
+      &.bottom-right-arrow .arrow {
+        border-color: @background transparent transparent transparent !important;
+      }
+      
+      &.left-top-arrow .arrow,
+      &.left-bottom-arrow .arrow {
+        border-color: transparent @background transparent transparent !important;
+      }
+      
+      &.right-top-arrow .arrow,
+      &.right-bottom-arrow .arrow {
+        border-color: transparent transparent @background transparent !important;
+      }
+      
+      .arrow {
+         background-image: none !important;
+         border-color: transparent transparent @background transparent !important;
+         border-style: solid;
+         border-width: 10px;
+         width: 0 !important;
+         height: 0 !important;
+         bottom: -2px !important;
+         left: 0;
+       }
+       
+       .source-frame-popover-title {
+         color: @foreground !important;
+       }
+       
+       .source-frame-popover-tree {
+         border-top-color: @toolbar-top !important;
+       }
     }
     
-    .popover .arrow {
-      background-image: none !important;
-      border-color: transparent transparent @background transparent !important;
-      border-style: solid;
-      border-width: 10px;
-      width: 0 !important;
-      height: 0 !important;
-      bottom: -2px !important;
-      left: 0;
-    }
-    
-    .popover.bottom-left-arrow .arrow,
-    .popover.bottom-right-arrow .arrow {
-      border-color: @background transparent transparent transparent !important;
-    }
-    
-    .popover.left-top-arrow .arrow,
-    .popover.left-bottom-arrow .arrow {
-      border-color: transparent @background transparent transparent !important;
-    }
-    
-    .popover.right-top-arrow .arrow,
-    .popover.right-bottom-arrow .arrow {
-      border-color: transparent transparent @background transparent !important;
-    }
-    
-    .popover .source-frame-popover-title {
-      color: @foreground !important;
-    }
-    
-    .popover .source-frame-popover-tree {
-      border-top-color: @toolbar-top !important;
-    }
-    
-    .custom-popup-vertical-scroll ::-webkit-scrollbar-track-piece:vertical:decrement,
-    .custom-popup-vertical-scroll ::-webkit-scrollbar-track-piece:vertical:increment {
+    .custom-popup-vertical-scroll {
+      ::-webkit-scrollbar-track-piece:vertical:decrement,
+      ::-webkit-scrollbar-track-piece:vertical:increment {
         background: #333 !important;
         border-radius: 5px !important;
+      }
     }
     
     .webkit-highlighted-line.webkit-line-content {
