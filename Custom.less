@@ -226,6 +226,25 @@
       color: @foreground !important;
       background: @background !important;
       
+      th {
+        .toolbar-background();
+        color: @foreground !important;
+        border-right-color: @selection !important;
+        border-bottom-color: @selection !important;
+        
+        &.sort-ascending > div::after {
+          content: url(@tree-arrow-up) !important;
+        }
+        
+        &.sort-descending > div::after {
+          content: url(@tree-arrow-down) !important;
+        }
+        
+        select {
+          color: @foreground !important;
+        }
+      }
+      
       tr.filler {
         background: @background !important;
       }
