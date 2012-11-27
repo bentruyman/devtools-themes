@@ -417,7 +417,7 @@
         border-right: 1px solid darken(@background, 25%) !important;
         
         img {
-          -webkit-filter: invert() brightness(0.15);
+          .button-modifier();
         }
       }
       
@@ -502,7 +502,7 @@
     
     .pane > .title > button,
     .pane > .title > select {
-      -webkit-filter: invert(1);
+      .button-modifier();
     }
     
     .split-view-sidebar-right {
