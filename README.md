@@ -44,8 +44,10 @@ conventions.
 
 ## Examples 
 
+![IR Black](https://raw.github.com/bentruyman/devtools-themes/master/examples/ir-black.png)
 ![Monokai Dark](https://raw.github.com/bentruyman/devtools-themes/master/examples/monokai-dark.png)
 ![Tomorrow Night](https://raw.github.com/bentruyman/devtools-themes/master/examples/tomorrow-night.png)
+![Tomorrow](https://raw.github.com/bentruyman/devtools-themes/master/examples/tomorrow.png)
 
 ## License
 
