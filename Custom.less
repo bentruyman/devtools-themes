@@ -210,6 +210,20 @@
       font-size: 12px !important;
     }
     
+    /* ADDITION */
+    /* Use Inconsolata font: http://www.google.com/webfonts/specimen/Inconsolata */
+    .script-view,
+    .text-editor-contents,
+    .pane.expanded,
+    #elements-content,
+    .resource-view.json { /* TO DO: add #console-messages elements */
+      font-family: Inconsolata, Menlo, monospace !important;
+    }
+    #elements-content * { /* TO DO: replace "*" with specific selectors */
+      font-size: 15px;
+    }
+    /* /ADDITION */
+    
     .highlight {
       color: @foreground;
     }
