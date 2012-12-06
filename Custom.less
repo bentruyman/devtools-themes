@@ -41,52 +41,62 @@
   // Toolbar
   // *********************************************/
   
-  &.compact #toolbar {
+  #toolbar {
     .toolbar-background();
     border-bottom: 1px solid @toolbar-top !important;
     border-top: @top-bar-width solid @top-bar-color !important;
-    padding-top: 0 !important;
-    height: 45px !important;
   }
   
-  &.compact #toolbar .toolbar-label {
+  #toolbar .toolbar-label {
     color: @foreground !important;
   }
   
-  &.compact #toolbar .toggled-on .toolbar-label {
+  #toolbar .toggled-on .toolbar-label {
     color: lighten(@foreground, 20%) !important;
   }
   
-  &.compact #toolbar .toolbar-item.toggleable.toggled-on {
+  #toolbar .toolbar-item.toggleable.toggled-on {
     .toolbar-background-reversed();
-    padding-top: 10px !important;
-    padding-bottom: 10px !important;
   }
   
-  &.compact .toolbar-item.close-left {
-    margin-top: 13px !important;
-  }
-  
-  &.compact #toolbar-controls {
-    margin-top: -5px !important;
-  }
-  
-  &.compact #toolbar-search-item {
-    margin-top: 12px !important;
-  }
-  
-  &.compact #main {
-    top: 50px !important;
-  }
-  
-  &.compact #search-results-matches {
+  #search-results-matches {
     color: lighten(@foreground, 20%) !important;
     text-shadow: none !important;
   }
 
-  &.compact #search {
+  #search {
     background: @background !important;
   }
+    
+    // *********************************************/
+    // Compact
+    // *********************************************/
+  
+    &.compact #toolbar {
+      padding-top: 0 !important;
+      height: 45px !important;
+    }
+    
+    &.compact #toolbar .toolbar-item.toggleable.toggled-on {
+      padding-top: 10px !important;
+      padding-bottom: 10px !important;
+    }
+    
+    &.compact .toolbar-item.close-left {
+      margin-top: 13px !important;
+    }
+    
+    &.compact #toolbar-controls {
+      margin-top: -5px !important;
+    }
+    
+    &.compact #toolbar-search-item {
+      margin-top: 12px !important;
+    }
+    
+    &.compact #main {
+      top: 50px !important;
+    }
   
   // *********************************************/
   // Console
