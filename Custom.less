@@ -41,6 +41,13 @@
   // Toolbar
   // *********************************************/
   
+  /* ADDITION */
+  /* Avoid ".compact" in selector (at least for background): */
+  div#toolbar {
+    .toolbar-background();
+  }
+  /* /ADDITION */
+  
   &.compact #toolbar {
     .toolbar-background();
     border-bottom: 1px solid @toolbar-top !important;
@@ -49,14 +56,20 @@
     height: 45px !important;
   }
   
+  div#toolbar .toolbar-label, /* ADDITION */
   &.compact #toolbar .toolbar-label {
     color: @foreground !important;
   }
   
+  div#toolbar .toggled-on .toolbar-label, /* ADDITION */
   &.compact #toolbar .toggled-on .toolbar-label {
     color: lighten(@foreground, 20%) !important;
   }
   
+  /* ADDITION */
+  div#toolbar .toolbar-item.toggleable.toggled-on {
+    .toolbar-background-reversed();
+  } /* Remove background from below: */
   &.compact #toolbar .toolbar-item.toggleable.toggled-on {
     .toolbar-background-reversed();
     padding-top: 10px !important;
@@ -79,11 +92,13 @@
     top: 50px !important;
   }
   
+  div#search-results-matches, /* ADDITION */
   &.compact #search-results-matches {
     color: lighten(@foreground, 20%) !important;
     text-shadow: none !important;
   }
 
+  div#search, /* ADDITION */
   &.compact #search {
     background: @background !important;
   }
