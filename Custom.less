@@ -41,67 +41,62 @@
   // Toolbar
   // *********************************************/
   
-  /* ADDITION */
-  /* Avoid ".compact" in selector (at least for background): */
-  div#toolbar {
-    .toolbar-background();
-  }
-  /* /ADDITION */
-  
-  &.compact #toolbar {
+  #toolbar {
     .toolbar-background();
     border-bottom: 1px solid @toolbar-top !important;
     border-top: @top-bar-width solid @top-bar-color !important;
-    padding-top: 0 !important;
-    height: 45px !important;
   }
   
-  div#toolbar .toolbar-label, /* ADDITION */
-  &.compact #toolbar .toolbar-label {
+  #toolbar .toolbar-label {
     color: @foreground !important;
   }
   
-  div#toolbar .toggled-on .toolbar-label, /* ADDITION */
-  &.compact #toolbar .toggled-on .toolbar-label {
+  #toolbar .toggled-on .toolbar-label {
     color: lighten(@foreground, 20%) !important;
   }
   
-  /* ADDITION */
-  div#toolbar .toolbar-item.toggleable.toggled-on {
+  #toolbar .toolbar-item.toggleable.toggled-on {
     .toolbar-background-reversed();
-  } /* Remove background from below: */
-  &.compact #toolbar .toolbar-item.toggleable.toggled-on {
-    .toolbar-background-reversed();
-    padding-top: 10px !important;
-    padding-bottom: 10px !important;
   }
   
-  &.compact .toolbar-item.close-left {
-    margin-top: 13px !important;
-  }
-  
-  &.compact #toolbar-controls {
-    margin-top: -5px !important;
-  }
-  
-  &.compact #toolbar-search-item {
-    margin-top: 12px !important;
-  }
-  
-  &.compact #main {
-    top: 50px !important;
-  }
-  
-  div#search-results-matches, /* ADDITION */
-  &.compact #search-results-matches {
+  #search-results-matches {
     color: lighten(@foreground, 20%) !important;
     text-shadow: none !important;
   }
 
-  div#search, /* ADDITION */
-  &.compact #search {
+  #search {
     background: @background !important;
   }
+    
+    // *********************************************/
+    // Compact
+    // *********************************************/
+  
+    &.compact #toolbar {
+      padding-top: 0 !important;
+      height: 45px !important;
+    }
+    
+    &.compact #toolbar .toolbar-item.toggleable.toggled-on {
+      padding-top: 10px !important;
+      padding-bottom: 10px !important;
+    }
+    
+    &.compact .toolbar-item.close-left {
+      margin-top: 13px !important;
+    }
+    
+    &.compact #toolbar-controls {
+      margin-top: -5px !important;
+    }
+    
+    &.compact #toolbar-search-item {
+      margin-top: 12px !important;
+    }
+    
+    &.compact #main {
+      top: 50px !important;
+    }
   
   // *********************************************/
   // Console
@@ -224,20 +219,6 @@
       background: @background !important;
       font-size: 12px !important;
     }
-    
-    /* ADDITION */
-    /* Use Inconsolata font: http://www.google.com/webfonts/specimen/Inconsolata */
-    .script-view,
-    .text-editor-contents,
-    .pane.expanded,
-    #elements-content,
-    .resource-view.json { /* TO DO: add #console-messages elements */
-      font-family: Inconsolata, Menlo, monospace !important;
-    }
-    #elements-content * { /* TO DO: replace "*" with specific selectors */
-      font-size: 15px;
-    }
-    /* /ADDITION */
     
     .highlight {
       color: @foreground;
