@@ -82,10 +82,6 @@
       padding-bottom: 10px !important;
     }
     
-    &.compact .toolbar-item.close-left {
-      margin-top: 13px !important;
-    }
-    
     &.compact #toolbar-controls {
       margin-top: -5px !important;
     }
@@ -128,7 +124,7 @@
     }
     
     .console-message, .console-user-command {
-      border-bottom: 1px solid #444 !important;
+      border-top: 1px solid lighten(@background, 20%) !important;
     }
     
     .console-user-command > .console-message-text {
@@ -188,6 +184,7 @@
     
     #console-prompt {
       color: @foreground !important;
+      border-top: 1px solid lighten(@background, 20%) !important;
     }
     
     #console-prompt::before {
@@ -196,7 +193,7 @@
     }
 
   // *********************************************/
-  // Elements/Network/Scripts
+  // Elements/Network/Scripts/Audits
   // *********************************************/
 
     // *********************************************/
@@ -207,7 +204,8 @@
     .properties-tree,
     .pane,
     .breakpoint-list li,
-    .pane > .body .info {
+    .pane > .body .info,
+    .audit-result {
       color: @foreground !important;
     }
     
@@ -482,7 +480,8 @@
     // Everything Else
     // *********************************************/
     
-    .editing {
+    .editing,
+    .audit-result-view {
       color: @foreground !important;
       background-color: @background !important;
     }
@@ -515,6 +514,10 @@
       .button-modifier();
     }
     
+    .pane.expanded:nth-last-of-type(1) {
+      border-bottom: 1px solid lighten(@background, 20%) !important;
+    }
+    
     .split-view-sidebar-right {
       background: lighten(@background, 5%) !important;
     }
@@ -523,8 +526,18 @@
     .properties-tree li.parent::before,
     .event-bars .event-bar .header::before,
     .outline-disclosure li.parent::before,
-    .styles-section.matched-styles .properties li.parent .expand-element {
+    .styles-section.matched-styles .properties li.parent .expand-element,
+      .audit-result-tree li.parent::before {
       content: url(@tree-arrow-right) !important;
+    }
+    
+    .section.expanded > .header::before,
+    .properties-tree li.parent.expanded::before,
+    .event-bars .event-bar.expanded .header::before,
+    .outline-disclosure li.parent.expanded::before,
+    .styles-section.matched-styles .properties li.parent.expanded .expand-element,
+    .audit-result-tree li.parent.expanded::before {
+      content: url(@tree-arrow-down) !important;
     }
     
     .styles-section .properties li.parent::before,
@@ -536,14 +549,6 @@
       margin-right: 1px !important;
       margin-left: -5px !important;
       opacity: 0.6 !important;
-    }
-    
-    .section.expanded > .header::before,
-    .properties-tree li.parent.expanded::before,
-    .event-bars .event-bar.expanded .header::before,
-    .outline-disclosure li.parent.expanded::before,
-    .styles-section.matched-styles .properties li.parent.expanded .expand-element {
-      content: url(@tree-arrow-down) !important;
     }
     
     .child-editing {
