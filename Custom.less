@@ -205,7 +205,8 @@
     .pane,
     .breakpoint-list li,
     .pane > .body .info,
-    .audit-result {
+    .audit-result,
+    .sidebar {
       color: @foreground !important;
     }
     
@@ -213,13 +214,20 @@
     .text-editor-contents,
     .pane.expanded,
     #elements-content,
-    .resource-view.json {
+    .resource-view.json,
+    .sidebar {
       background: @background !important;
       font-size: 12px !important;
     }
     
-    .highlight {
-      color: @foreground;
+    .highlight,
+    .outline-disclosure > ol {
+      color: @foreground !important;
+    }
+    
+    .sidebar-tree-section {
+      color: @foreground !important;
+      text-shadow: none !important;
     }
     
     li.hovered:not(.selected) .selection {
