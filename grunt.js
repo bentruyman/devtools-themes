@@ -3,7 +3,7 @@ module.exports = function (grunt) {
   'use strict';
 
   // defaults
-  var defaultTheme = 'monokai-dark';
+  var defaultTheme = 'ir-black';
 
   // Project configuration.
   grunt.initConfig({

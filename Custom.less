@@ -31,6 +31,11 @@
 #-webkit-web-inspector {
   
   background-color: @background;
+
+  .monospace,
+  .source-code {
+    font-family: 'DroidSansMono', Menlo, monospace !important;
+  }
   
   ::selection {
     background: @selection !important;
@@ -82,10 +87,6 @@
       padding-bottom: 10px !important;
     }
     
-    &.compact .toolbar-item.close-left {
-      margin-top: 13px !important;
-    }
-    
     &.compact #toolbar-controls {
       margin-top: -5px !important;
     }
@@ -107,7 +108,7 @@
     // *********************************************/
     
     #console-messages {
-      font-family: 'DroidSansMono', Menlo, monospace !important;
+      /* font-family: 'DroidSansMono', Menlo, monospace !important; */
       background: @background;
     }
     
@@ -128,11 +129,15 @@
     }
     
     .console-message, .console-user-command {
-      border-bottom: 1px solid #444 !important;
+      border-top: 1px solid lighten(@background, 20%) !important;
     }
     
     .console-user-command > .console-message-text {
       color: @foreground !important;
+    }
+    
+    .console-message .outline-disclosure {
+      line-height: 1.4 !important;
     }
     
     .console-formatted-number {
@@ -188,6 +193,7 @@
     
     #console-prompt {
       color: @foreground !important;
+      border-top: 1px solid lighten(@background, 20%) !important;
     }
     
     #console-prompt::before {
@@ -196,7 +202,7 @@
     }
 
   // *********************************************/
-  // Elements/Network/Scripts
+  // Elements/Network/Scripts/Audits
   // *********************************************/
 
     // *********************************************/
@@ -207,7 +213,10 @@
     .properties-tree,
     .pane,
     .breakpoint-list li,
-    .pane > .body .info {
+    .pane > .body .info,
+    .audit-result,
+    .sidebar,
+    .sidebar-overlay {
       color: @foreground !important;
     }
     
@@ -215,13 +224,26 @@
     .text-editor-contents,
     .pane.expanded,
     #elements-content,
-    .resource-view.json {
+    .resource-view.json,
+    .sidebar,
+    .navigator-tabbed-pane {
       background: @background !important;
       font-size: 12px !important;
     }
     
-    .highlight {
-      color: @foreground;
+    .highlight,
+    .sidebar .outline-disclosure > ol,
+    .navigator-tabbed-pane .outline-disclosure > ol {
+      color: @foreground !important;
+    }
+    
+    .outline-disclosure ol:focus li.selected {
+      background-color: @selection !important;
+    }
+    
+    .sidebar-tree-section {
+      color: @foreground !important;
+      text-shadow: none !important;
     }
     
     li.hovered:not(.selected) .selection {
@@ -273,6 +295,25 @@
         &.name-column {
           border-right: 1px solid @selection !important;
         }
+      }
+      
+      .resources-divider-label {
+        color: @foreground !important;
+      }
+
+      .network-graph-label {
+        color: #c5c8c6 !important; /* @foreground */
+        text-shadow: none !important;
+      }
+      
+      .network-graph-side:hover .network-graph-label {
+        color: @foreground !important;
+      }
+      
+      .network-graph-label.after::before,
+      .network-graph-label.before::after {
+        content: "\2014" !important;
+        color: @selection !important;
       }
     }
     
@@ -482,7 +523,8 @@
     // Everything Else
     // *********************************************/
     
-    .editing {
+    .editing,
+    .audit-result-view {
       color: @foreground !important;
       background-color: @background !important;
     }
@@ -515,6 +557,10 @@
       .button-modifier();
     }
     
+    .pane.expanded:nth-last-of-type(1) {
+      border-bottom: 1px solid lighten(@background, 20%) !important;
+    }
+    
     .split-view-sidebar-right {
       background: lighten(@background, 5%) !important;
     }
@@ -523,8 +569,18 @@
     .properties-tree li.parent::before,
     .event-bars .event-bar .header::before,
     .outline-disclosure li.parent::before,
-    .styles-section.matched-styles .properties li.parent .expand-element {
+    .styles-section.matched-styles .properties li.parent .expand-element,
+      .audit-result-tree li.parent::before {
       content: url(@tree-arrow-right) !important;
+    }
+    
+    .section.expanded > .header::before,
+    .properties-tree li.parent.expanded::before,
+    .event-bars .event-bar.expanded .header::before,
+    .outline-disclosure li.parent.expanded::before,
+    .styles-section.matched-styles .properties li.parent.expanded .expand-element,
+    .audit-result-tree li.parent.expanded::before {
+      content: url(@tree-arrow-down) !important;
     }
     
     .styles-section .properties li.parent::before,
@@ -536,14 +592,6 @@
       margin-right: 1px !important;
       margin-left: -5px !important;
       opacity: 0.6 !important;
-    }
-    
-    .section.expanded > .header::before,
-    .properties-tree li.parent.expanded::before,
-    .event-bars .event-bar.expanded .header::before,
-    .outline-disclosure li.parent.expanded::before,
-    .styles-section.matched-styles .properties li.parent.expanded .expand-element {
-      content: url(@tree-arrow-down) !important;
     }
     
     .child-editing {
@@ -626,11 +674,13 @@
     }
     
     .popover {
-      background-color: rgba(0, 0, 0, 0.9) !important;
+      color: @foreground !important;
+      /* background-color: rgba(0, 0, 0, 0.9) !important; */
+      background-color: @background !important;
       border: 10px solid rgba(0, 0, 0, 0.9) !important;
       border-radius: 10px !important;
       -webkit-border-image: none !important;
-      margin-left: 10px !important;
+      /* margin-left: 10px !important; */
       
       &.bottom-left-arrow .arrow,
       &.bottom-right-arrow .arrow {
@@ -658,7 +708,8 @@
          left: 0;
        }
        
-       .source-frame-popover-title {
+       .source-frame-popover-title,
+       .network-timing-bar-title {
          color: @foreground !important;
        }
        
@@ -684,7 +735,8 @@
       outline: 1px solid darken(@selection, 15%) !important;
     }
     
-    ol.watch-expressions > li.hovered {
-      background-color: @foreground !important;
+    .base-storage-tree-element-title,
+    .base-storage-tree-element-subtitle {
+      color: @foreground !important;
     }
 }
