@@ -215,14 +215,19 @@
     .pane.expanded,
     #elements-content,
     .resource-view.json,
-    .sidebar {
+    .sidebar,
+    .sidebar-overlay {
       background: @background !important;
       font-size: 12px !important;
     }
     
     .highlight,
-    .sidebar .outline-disclosure > ol {
+    .outline-disclosure > ol {
       color: @foreground !important;
+    }
+    
+    .base-storage-tree-element-subtitle {
+      color: fade(@foreground, 50%) !important;
     }
     
     .sidebar-tree-section {
