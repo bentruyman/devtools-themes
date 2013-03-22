@@ -28,10 +28,6 @@
   background-image: -webkit-linear-gradient(@toolbar-bottom, @toolbar-top) !important;
 }
 
-.button-modifier-contrast () {
-  -webkit-filter: invert(1);
-}
-
 #-webkit-web-inspector {
   
   background-color: @background;
@@ -570,7 +566,7 @@
     
     .split-view-horizontal .sidebar-pane-toolbar > .select-settings,
     .split-view-horizontal .sidebar-pane-toolbar > .pane-title-button {
-      .button-modifier-contrast();
+      -webkit-filter: invert(1);
     }
     
     .pane.expanded:nth-last-of-type(1) {
