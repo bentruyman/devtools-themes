@@ -29,11 +29,17 @@ module.exports = function (grunt) {
     
     return function () {
       var contents = grunt.file.read(filename),
-          foundation = grunt.file.read('Custom.less'),
-          done = this.async();
+          base = grunt.file.read('Custom.less'),
+          done = this.async(),
+          pieces = [base, contents];
       
-      // join the contents of the theme stylesheet with the foundation
-      contents = [foundation, contents].join('\n');
+      // if a user stylesheet exists, add it to the list of pieces to compile
+      if (grunt.file.exists(USER_STYLESHEET)) {
+        pieces.push(grunt.file.read(USER_STYLESHEET));
+      }
+      
+      // join the contents of the theme stylesheet with the base
+      contents = pieces.join('\n');
       
       // compile the less stylesheet
       parser.parse(contents, function (err, tree) {
