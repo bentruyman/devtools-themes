@@ -1,0 +1,8 @@
+// Rename this file to "User.less"
+#-webkit-web-inspector {
+  // Add your personalizations here
+  .monospace,
+  .source-code {
+    font-family: 'Comic Sans MS', fantasy !important;
+  }
+}
