@@ -11,11 +11,12 @@ var less = require('less'),
     });
 
 // constants
-var THEMES_DIR = 'themes';
+var THEMES_DIR = 'themes',
+    USER_STYLESHEET = 'User.less';
 
 module.exports = function (grunt) {
   // generate a list of themes based on sources files in the "themes" directory
-  var themes = grunt.file.expandFiles(THEMES_DIR + '/*.less').map(function (filename) {
+  var themes = grunt.file.expand(THEMES_DIR + '/*.less').map(function (filename) {
     return path.basename(filename, '.less');
   });
   
