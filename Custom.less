@@ -554,8 +554,8 @@
       color: @html-comment !important;
     }
     
-    .styles-sidebar-separator,
-    .pane > .title {
+    .sidebar-separator,
+    .pane-title {
       .toolbar-background();
       border-top-color: @toolbar-top !important;
       border-bottom-color: @toolbar-bottom !important;
@@ -564,8 +564,13 @@
       text-overflow: ellipsis !important;
     }
     
-    .pane > .title > button,
-    .pane > .title > select {
+    .sidebar-pane-subtitle {
+      color: @foreground !important;
+      .text-shadow();
+    }
+    
+    .pane-title > button,
+    .pane-title > select {
       .button-modifier();
     }
     
