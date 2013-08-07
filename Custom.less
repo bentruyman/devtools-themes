@@ -165,12 +165,16 @@
 
     .console-group-messages .section .header::before,
     .properties-tree li.parent::before {
-      content: url(@tree-arrow-right) !important;
+      /*background-color: pink !important;*/
+      /*color: red !important;*/
+      /*.filter-modifier();*/
     }
 
     .console-group-messages .section.expanded .header::before,
     .properties-tree li.parent.expanded::before {
-      content: url(@tree-arrow-down) !important;
+      /*background-color: pink !important;*/
+      /*color: red !important;*/
+      /*.filter-modifier();*/
     }
 
     .console-message-text {
@@ -275,14 +279,6 @@
         color: @foreground !important;
         border-right-color: @selection !important;
         border-bottom-color: @selection !important;
-
-        &.sort-ascending > div::after {
-          content: url(@tree-arrow-up) !important;
-        }
-
-        &.sort-descending > div::after {
-          content: url(@tree-arrow-down) !important;
-        }
 
         select {
           color: @foreground !important;
@@ -480,7 +476,7 @@
         border-right: 1px solid darken(@background, 25%) !important;
 
         img {
-          .button-modifier();
+          .filter-modifier();
         }
       }
 
@@ -565,14 +561,9 @@
       text-overflow: ellipsis !important;
     }
 
-    .sidebar-pane-subtitle {
-      color: @foreground !important;
-      .text-shadow();
-    }
-
     .pane-title > button,
     .pane-title > select {
-      .button-modifier();
+      .filter-modifier();
     }
 
     .split-view-horizontal .sidebar-pane-toolbar > .select-settings,
@@ -589,22 +580,17 @@
       background: lighten(@background, 5%) !important;
     }
 
-    .section > .header::before,
-    .properties-tree li.parent::before,
+    .audit-result-tree li.parent.expanded::before,
+    .audit-result-tree li.parent::before,
     .event-bars .event-bar .header::before,
-    .outline-disclosure li.parent::before,
-    .styles-section.matched-styles .properties li.parent .expand-element,
-      .audit-result-tree li.parent::before {
-      content: url(@tree-arrow-right) !important;
-    }
-
-    .section.expanded > .header::before,
-    .properties-tree li.parent.expanded::before,
     .event-bars .event-bar.expanded .header::before,
-    .outline-disclosure li.parent.expanded::before,
-    .styles-section.matched-styles .properties li.parent.expanded .expand-element,
-    .audit-result-tree li.parent.expanded::before {
-      content: url(@tree-arrow-down) !important;
+    .properties-tree li.parent.expanded::before,
+    .properties-tree li.parent::before,
+    .section > .header::before,
+    .section.expanded > .header::before,
+    .styles-section.matched-styles .properties li.parent .expand-element,
+    .styles-section.matched-styles .properties li.parent.expanded .expand-element {
+      .filter-modifier();
     }
 
     .styles-section .properties li.parent::before,
